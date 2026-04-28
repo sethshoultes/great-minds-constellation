@@ -98,7 +98,7 @@ For software-only projects (no creative artifacts), only `engineering/` and the 
 ## Roadmap
 
 - **v0.1** (this release) — nine personas, four MVP skills, DXT bundle.
-- **v1.0** — Add `/engineers-write-runbook` (production operations doc), `/engineers-debate <topic> <a> <b>` (two-round craft debate; mirror `/authors-debate`), `/engineers-critique <path>` (fast 3-bullet verdict from N personas), `/engineers-write-adr <decision>` (architecture decision record), `/engineers-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the trilogy.
+- **v1.0** — Add `/engineers-write-runbook` (production operations doc), `/engineers-debate <topic> <a> <b>` (two-round craft debate; mirror `/authors-debate`), `/engineers-critique <path>` (fast 3-bullet verdict from N personas), `/engineers-write-adr <decision>` (architecture decision record), `/engineers-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the constellation's mature plugins.
 
 ## License
 

@@ -1,28 +1,22 @@
 # Great Designers
 
-Nine design personas (Don Norman, Julie Zhuo, Jared Spool, Dieter Rams, Susan Kare, Marty Cagan, Paula Scher, Tinker Hatfield, Edward Tufte) and four operational skills for design specs, design audits, and project initialization. A Claude Code plugin. Seventh in the Great Minds constellation:
+Nine design personas (Don Norman, Julie Zhuo, Jared Spool, Dieter Rams, Susan Kare, Marty Cagan, Paula Scher, Tinker Hatfield, Edward Tufte) and four operational skills for design specs, design audits, and project initialization. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- [`great-publishers-plugin`](https://github.com/sethshoultes/great-publishers-plugin) — publication form
-- [`great-marketers-plugin`](https://github.com/sethshoultes/great-marketers-plugin) — marketing
-- [`great-engineers-plugin`](https://github.com/sethshoultes/great-engineers-plugin) — software-engineering craft
-- **`great-designers-plugin`** (this repo) — product, UX, and visual-design craft
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-designers-plugin
-/plugin install great-designers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-designers@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-designers-plugin
+cd great-designers-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
 
 ## What's in v0.1
@@ -100,7 +94,7 @@ For software-only projects, `design/` lives alongside `engineering/`. For brand 
 ## Roadmap
 
 - **v0.1** (this release) — nine personas, four MVP skills, DXT bundle.
-- **v1.0** — Add `/designers-write-system` (design-system documentation), `/designers-debate <topic> <a> <b>` (two-round craft debate; mirror `/authors-debate`), `/designers-critique <path>` (fast 3-bullet verdict from N personas), `/designers-accessibility-audit <path>` (WCAG-aware review), `/designers-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the trilogy.
+- **v1.0** — Add `/designers-write-system` (design-system documentation), `/designers-debate <topic> <a> <b>` (two-round craft debate; mirror `/authors-debate`), `/designers-critique <path>` (fast 3-bullet verdict from N personas), `/designers-accessibility-audit <path>` (WCAG-aware review), `/designers-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the constellation's mature plugins.
 
 ## License
 

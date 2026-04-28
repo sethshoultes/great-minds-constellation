@@ -1,22 +1,23 @@
 # Great Authors
 
-Twelve personas (eleven author voices including Toni Morrison, plus Robert Gottlieb the editor) and seventeen slash commands for prose craft, editorial work, and long-form project management with a living memory bible. Includes the seven-phase autonomous-novel-orchestration pipeline. A Claude Code plugin. Companion to [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) and [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin).
+Twelve personas (eleven author voices including Toni Morrison, plus Robert Gottlieb the editor) and seventeen slash commands for prose craft, editorial work, and long-form project management with a living memory bible. Includes the seven-phase autonomous-novel-orchestration pipeline. A Claude Code plugin.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
+
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-authors-plugin
-/plugin install great-authors@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-authors@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-authors-plugin
+cd great-authors-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
-Share the generated `great-authors.dxt` — teammates double-click to install.
 
 ## What's new in v1.4
 

@@ -1,29 +1,22 @@
 # Great Operators
 
-Nine operations personas (Tim Cook, Andy Grove, Charlie Munger, Patty McCord, W. Edwards Deming, Taiichi Ohno, Ben Horowitz, Sam Walton, Herb Kelleher) and four operational skills for operating plans, process reviews, and project initialization. A Claude Code plugin. Eighth in the Great Minds constellation:
+Nine operations personas (Tim Cook, Andy Grove, Charlie Munger, Patty McCord, W. Edwards Deming, Taiichi Ohno, Ben Horowitz, Sam Walton, Herb Kelleher) and four operational skills for operating plans, process reviews, and project initialization. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- [`great-publishers-plugin`](https://github.com/sethshoultes/great-publishers-plugin) — publication form
-- [`great-marketers-plugin`](https://github.com/sethshoultes/great-marketers-plugin) — marketing
-- [`great-engineers-plugin`](https://github.com/sethshoultes/great-engineers-plugin) — software-engineering craft
-- [`great-designers-plugin`](https://github.com/sethshoultes/great-designers-plugin) — product, UX, visual-design craft
-- **`great-operators-plugin`** (this repo) — operations, management, execution craft
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-operators-plugin
-/plugin install great-operators@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-operators@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-operators-plugin
+cd great-operators-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
 
 ## What's in v0.1
@@ -102,7 +95,7 @@ For software-only or business-only projects, `operations/` lives alongside whate
 ## Roadmap
 
 - **v0.1** (this release) — nine personas, four MVP skills, DXT bundle.
-- **v1.0** — Add `/operators-write-okrs`, `/operators-debate <topic> <a> <b>` (mirror `/authors-debate`), `/operators-critique <path>` (fast 3-bullet verdict from N personas), `/operators-postmortem <incident>`, `/operators-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the trilogy.
+- **v1.0** — Add `/operators-write-okrs`, `/operators-debate <topic> <a> <b>` (mirror `/authors-debate`), `/operators-critique <path>` (fast 3-bullet verdict from N personas), `/operators-postmortem <incident>`, `/operators-edit <file>` (multi-persona marked-up review). ~12 skills total. Matches the breadth of the constellation's mature plugins.
 
 ## License
 

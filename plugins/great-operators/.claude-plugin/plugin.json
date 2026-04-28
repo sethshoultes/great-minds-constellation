@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "great-operators",
   "version": "0.1.0",
-  "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) plus four operational skills for operating plans, process reviews, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Eighth in the Great Minds constellation. Warren Buffett stays in great-minds for strategic capital allocation (cross-dispatchable); operators handles execution craft.",
+  "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) plus four operational skills for operating plans, process reviews, and project initialization. Warren Buffett stays in great-minds for strategic capital allocation (cross-dispatchable); operators handles execution craft.",
   "author": {
     "name": "Seth Shoultes",
     "url": "https://github.com/sethshoultes"

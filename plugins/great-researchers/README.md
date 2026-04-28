@@ -1,30 +1,18 @@
 # Great Researchers
 
-Nine researcher personas (Carl Sagan, Stephen Jay Gould, Mary Roach, Oliver Sacks, Atul Gawande, Jared Diamond, E. O. Wilson, Rebecca Skloot, Robert Caro) and four operational skills for studies, peer reviews, and project initialization. A Claude Code plugin. **Tenth and final v0.1 plugin in the Great Minds constellation:**
+Nine researcher personas (Carl Sagan, Stephen Jay Gould, Mary Roach, Oliver Sacks, Atul Gawande, Jared Diamond, E. O. Wilson, Rebecca Skloot, Robert Caro) and four operational skills for studies, peer reviews, and project initialization. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- [`great-publishers-plugin`](https://github.com/sethshoultes/great-publishers-plugin) — publication form
-- [`great-marketers-plugin`](https://github.com/sethshoultes/great-marketers-plugin) — marketing
-- [`great-engineers-plugin`](https://github.com/sethshoultes/great-engineers-plugin) — software-engineering craft
-- [`great-designers-plugin`](https://github.com/sethshoultes/great-designers-plugin) — product, UX, visual-design craft
-- [`great-operators-plugin`](https://github.com/sethshoultes/great-operators-plugin) — operations, management, execution craft
-- [`great-counsels-plugin`](https://github.com/sethshoultes/great-counsels-plugin) — legal, policy, ethics craft
-- **`great-researchers-plugin`** (this repo) — academic/scientific register, literature review, citation discipline
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-The constellation v0.1 is now complete. Next step in the brain roadmap: form the corporation, serve real customers.
-
-> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds`.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 > ⚠️ **NOT ACADEMIC ADVICE.** Personas in this plugin are craft channels in the voice of canonical figures. The plugin is a writing and reasoning tool, not a substitute for peer-reviewed research, a graduate advisor, or a domain expert in your specific field.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-researchers-plugin
-/plugin install great-researchers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-researchers@great-minds-constellation
 ```
 
 **Claude Desktop** (DXT bundle):

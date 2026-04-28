@@ -1,32 +1,24 @@
 # Great Counsels
 
-Nine counsel personas (Ruth Bader Ginsburg, Thurgood Marshall, Antonin Scalia, Lawrence Lessig, Tim Wu, Louis Brandeis, Cass Sunstein, Hannah Arendt, John Rawls) and four operational skills for legal memos, policy memos, ethics reviews, and project initialization. A Claude Code plugin. Ninth in the Great Minds constellation:
+Nine counsel personas (Ruth Bader Ginsburg, Thurgood Marshall, Antonin Scalia, Lawrence Lessig, Tim Wu, Louis Brandeis, Cass Sunstein, Hannah Arendt, John Rawls) and four operational skills for legal memos, policy memos, ethics reviews, and project initialization. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- [`great-publishers-plugin`](https://github.com/sethshoultes/great-publishers-plugin) — publication form
-- [`great-marketers-plugin`](https://github.com/sethshoultes/great-marketers-plugin) — marketing
-- [`great-engineers-plugin`](https://github.com/sethshoultes/great-engineers-plugin) — software-engineering craft
-- [`great-designers-plugin`](https://github.com/sethshoultes/great-designers-plugin) — product, UX, visual-design craft
-- [`great-operators-plugin`](https://github.com/sethshoultes/great-operators-plugin) — operations, management, execution craft
-- **`great-counsels-plugin`** (this repo) — legal, policy, ethics craft
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 > ⚠️ **NOT LEGAL ADVICE.** This plugin produces craft-level memos, reviews, and policy analysis in the voice of canonical legal/policy/ethics figures. It is a writing and reasoning tool, not a substitute for licensed counsel. Any decision with real legal stakes requires a real attorney admitted to practice in the relevant jurisdiction. The personas are channels for craft register; they are not your lawyer.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-counsels-plugin
-/plugin install great-counsels@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-counsels@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-counsels-plugin
+cd great-counsels-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
 
 ## What's in v0.1
@@ -111,7 +103,7 @@ counsel/                        # great-counsels writes here (this plugin)
 ## Roadmap
 
 - **v0.1** (this release) — nine personas, four MVP skills, DXT bundle.
-- **v1.0** — Add `/counsels-debate <topic> <a> <b>` (mirror `/authors-debate` — RBG vs. Scalia would be the canonical example), `/counsels-critique <path>` (fast 3-bullet verdict from N personas), `/counsels-write-policy <topic>` (full policy document), `/counsels-edit <file>` (multi-persona marked-up review), `/counsels-veil-of-ignorance <decision>` (Rawls-mode ethical analysis). ~12 skills total. Matches the breadth of the trilogy.
+- **v1.0** — Add `/counsels-debate <topic> <a> <b>` (mirror `/authors-debate` — RBG vs. Scalia would be the canonical example), `/counsels-critique <path>` (fast 3-bullet verdict from N personas), `/counsels-write-policy <topic>` (full policy document), `/counsels-edit <file>` (multi-persona marked-up review), `/counsels-veil-of-ignorance <decision>` (Rawls-mode ethical analysis). ~12 skills total. Matches the breadth of the constellation's mature plugins.
 
 ## License
 

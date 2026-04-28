@@ -10,7 +10,7 @@
 /constellation-start
 ```
 
-The discoverable entry point for the Great Minds constellation. Asks 2-3 questions about your project shape and routes to the right plugin's project-init skill — or channels Phil Jackson (constellation-aware as of v1.3) for ambiguous or mixed projects. Always ensures the bible at `.great-authors/project.md` exists, since that's the shared spine across all five plugins.
+The discoverable entry point for the Great Minds constellation. Asks 2-3 questions about your project shape and routes to the right plugin's project-init skill — or channels Phil Jackson (constellation-aware as of v1.3) for ambiguous or mixed projects. Always ensures the bible at `.great-authors/project.md` exists, since that's the shared spine across all 10 plugins.
 
 If you already know which plugin you want, you can skip the entry point and run that plugin's project-init directly. `/constellation-start` exists for the case where you don't.
 
@@ -99,25 +99,26 @@ All three share the same 14 personas. Edit once in `agents/` at repo root — a 
 
 ## Install
 
-**Full agency (Claude Code):**
-```bash
-/plugin marketplace add sethshoultes/great-minds-plugin
-/plugin install great-minds@sethshoultes
+**Full agency (Claude Code) — recommended via the constellation marketplace:**
+```
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-minds@great-minds-constellation
 ```
 
-**Lite (Cowork or Code):**
-```bash
+**Lite (Cowork or Code)** — only available via the standalone marketplace:
+```
 /plugin marketplace add sethshoultes/great-minds-plugin
 /plugin install great-minds-lite@sethshoultes
 ```
 
-**DXT (Desktop app):**
+**DXT (Desktop app)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-minds-plugin
+cd great-minds-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 # Share the generated great-minds.dxt — teammates double-click to install.
 ```
 
-See [`distribution/README.md`](distribution/README.md) for full details on the lite + DXT options.
+See [`distribution/README.md`](distribution/README.md) (in the standalone repo) for full details on the lite + DXT options.
 
 ## What You Get
 

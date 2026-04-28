@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "great-marketers",
   "version": "0.1.0",
-  "description": "Eight advertising/marketing personas (David Ogilvy, Bill Bernbach, Mary Wells Lawrence, Lee Clow, Rosser Reeves, Helen Lansdowne Resor, Bruce Barton, Rory Sutherland) plus four operational skills for positioning, ad copy, and launch composition. Drafted by great-authors writers using cross-plugin orchestration. Fifth in the Great Minds constellation — owns marketing.",
+  "description": "Eight advertising/marketing personas (David Ogilvy, Bill Bernbach, Mary Wells Lawrence, Lee Clow, Rosser Reeves, Helen Lansdowne Resor, Bruce Barton, Rory Sutherland) plus four operational skills for positioning, ad copy, and launch composition. The marketing craft register in the Great Minds constellation.",
   "author": {
     "name": "Seth Shoultes",
     "url": "https://github.com/sethshoultes"

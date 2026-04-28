@@ -1,20 +1,18 @@
 # Great Filmmakers
 
-Twelve filmmaker personas (6 directors + 2 writers + 4 craft specialists) plus slash commands for scene breakdown and film-craft work. A Claude Code plugin. Third in the Great Minds trilogy:
+Twelve filmmaker personas (6 directors + 2 writers + 4 craft specialists) plus slash commands for scene breakdown and film-craft work. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- **`great-filmmakers-plugin`** (this repo) — film craft
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 📖 **[Read the User Manual](MANUAL.md)** for the complete reference — install, all twelve personas, all five commands, the bible structure, backend selection, Veo 3 constraints, style presets, an end-to-end walkthrough, patterns, and troubleshooting.
 
 ## Install
 
 ```
-/plugin marketplace add sethshoultes/great-filmmakers-plugin
-/plugin install great-filmmakers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-filmmakers@great-minds-constellation
 ```
 
 ## What's new in v1.10

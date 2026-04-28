@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "great-engineers",
   "version": "0.1.0",
-  "description": "Nine engineering personas (Carmack, Hopper, Knuth, Torvalds, DHH, Hejlsberg, Eich, Dijkstra, Sandi Metz) plus four operational skills for technical specs, design reviews, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Sixth in the Great Minds constellation. Margaret Hamilton stays in great-minds (cross-dispatchable for QA work).",
+  "description": "Nine engineering personas (Carmack, Hopper, Knuth, Torvalds, DHH, Hejlsberg, Eich, Dijkstra, Sandi Metz) plus four operational skills for technical specs, design reviews, and project initialization. Margaret Hamilton stays in great-minds (cross-dispatchable for QA work).",
   "author": {
     "name": "Seth Shoultes",
     "url": "https://github.com/sethshoultes"

@@ -1,26 +1,22 @@
 # Great Marketers
 
-Eight advertising/marketing personas (David Ogilvy, Bill Bernbach, Mary Wells Lawrence, Lee Clow, Rosser Reeves, Helen Lansdowne Resor, Bruce Barton, Rory Sutherland) and four operational skills for positioning, ad copy, and launch composition. A Claude Code plugin. Fifth in the Great Minds constellation:
+Eight advertising/marketing personas (David Ogilvy, Bill Bernbach, Mary Wells Lawrence, Lee Clow, Rosser Reeves, Helen Lansdowne Resor, Bruce Barton, Rory Sutherland) and four operational skills for positioning, ad copy, and launch composition. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- [`great-publishers-plugin`](https://github.com/sethshoultes/great-publishers-plugin) — publication form
-- **`great-marketers-plugin`** (this repo) — marketing
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-marketers-plugin
-/plugin install great-marketers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-marketers@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-marketers-plugin
+cd great-marketers-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
 
 ## What's in v0.1
@@ -57,7 +53,7 @@ The constellation as it stood produced creative artifacts (prose, film, publicat
 
 great-marketers consumes what the other four plugins produce — the manuscript from `great-authors`, the cover concept from `great-publishers`, the trailer from `great-filmmakers`, the strategic positioning from `great-minds` — and turns it into copy that sells.
 
-The plugin is consciously scoped to **marketing**. Software engineering, product/UX, operations are deferred to future sibling plugins (`great-engineers`, `great-designers`, `great-operators`) — see [`projects/great-minds-ai-company-constellation`](https://github.com/sethshoultes) for the roadmap.
+The plugin is consciously scoped to **marketing**. Software engineering, product/UX, operations, legal, and research each live in their own constellation plugins (`great-engineers`, `great-designers`, `great-operators`, `great-counsels`, `great-researchers`) and compose via cross-plugin dispatch.
 
 ## Conventions inherited from the constellation
 
@@ -85,7 +81,7 @@ marketing/                      # great-marketers writes here (this plugin)
 ## Roadmap
 
 - **v0.1** (this release) — eight personas, four MVP skills, DXT bundle.
-- **v1.0** — Add `/marketers-write-press-kit`, `/marketers-write-email-sequence`, `/marketers-write-social-thread`, `/marketers-ab-test-copy`, `/marketers-orchestrate-launch`, `/marketers-debate`, `/marketers-critique`, `/marketers-edit`. ~12 skills total. Matches the breadth of the trilogy.
+- **v1.0** — Add `/marketers-write-press-kit`, `/marketers-write-email-sequence`, `/marketers-write-social-thread`, `/marketers-ab-test-copy`, `/marketers-orchestrate-launch`, `/marketers-debate`, `/marketers-critique`, `/marketers-edit`. ~12 skills total. Matches the breadth of the constellation's mature plugins.
 
 ## License
 

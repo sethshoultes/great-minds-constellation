@@ -1,27 +1,23 @@
 # Great Publishers
 
-Eight publisher/editor/designer personas (Chip Kidd, Tina Brown, Maxwell Perkins, Jann Wenner, Bob Silvers, Diana Vreeland, Bennett Cerf, George Lois) and four operational skills that take what `great-authors` and `great-filmmakers` produce and ship it as book sites, trailers, blog posts, and cover briefs. A Claude Code plugin. Fourth in the Great Minds constellation:
+Eight publisher/editor/designer personas (Chip Kidd, Tina Brown, Maxwell Perkins, Jann Wenner, Bob Silvers, Diana Vreeland, Bennett Cerf, George Lois) and four operational skills that take what `great-authors` and `great-filmmakers` produce and ship it as book sites, trailers, blog posts, and cover briefs. A Claude Code plugin.
 
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft
-- **`great-publishers-plugin`** (this repo) — publication form
+Part of the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains.
 
-> **New to the Great Minds constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
+> **New to the constellation?** Start with [`/constellation-start`](https://github.com/sethshoultes/great-minds-plugin) in `great-minds` — it asks 2-3 questions about your project shape and routes to the right plugin.
 
 ## Install
 
-**Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-publishers-plugin
-/plugin install great-publishers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-publishers@great-minds-constellation
 ```
 
-**Claude Desktop** (DXT bundle):
+**Claude Desktop (DXT bundle)** — DXT distribution lives in the standalone repo, not the constellation copy:
 ```bash
-cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+git clone https://github.com/sethshoultes/great-publishers-plugin
+cd great-publishers-plugin/distribution/dxt && npm install && npx @anthropic-ai/dxt pack
 ```
-Share the generated `great-publishers.dxt` — teammates double-click to install.
 
 ## What's in v0.1
 
@@ -49,11 +45,11 @@ Share the generated `great-publishers.dxt` — teammates double-click to install
 
 ## Why this plugin
 
-The Great Minds trilogy as it stood produced **artifacts** but not **shippable, public-facing deliverables**. Manuscripts. Storyboards. Render manifests. Strategic decisions. None of them was a book site, a video trailer, a launch jacket, a cover. That's the gap great-publishers fills: it consumes what the other plugins produce and ships it.
+The other constellation plugins produce **artifacts** but not **shippable, public-facing deliverables**. Manuscripts. Storyboards. Render manifests. Strategic decisions. None of them was a book site, a video trailer, a launch jacket, a cover. That's the gap great-publishers fills: it consumes what the other plugins produce and ships it.
 
 The plugin is consciously scoped to **publication form**. Marketing and ad copy live in [`great-marketers`](https://github.com/sethshoultes/great-marketers-plugin) (shipped). Software engineering, product design, and operations are filed for future sibling plugins (`great-engineers`, `great-designers`, `great-operators`) — see [`projects/great-minds-ai-company-constellation`](https://github.com/sethshoultes) for the roadmap.
 
-## Conventions inherited from the trilogy
+## Conventions inherited from the constellation
 
 - **Orchestrator vs. specialist.** Personas are dispatched as sub-agents in clean contexts. The orchestrator never produces the published artifact in-context. See `ORCHESTRATING.md`. The Gottlieb persona in great-authors covers the orchestrator role; great-publishers does NOT add a parallel persona.
 - **Default-save.** Every generative skill saves output to disk before showing it in chat. Save to `publishers/<subdir>/<slug>.md`. Document the path in the response. Never strand work in chat.
