@@ -117,7 +117,7 @@ The researchers plugin composes with the rest of the constellation:
 - `great-minds:steve-jobs-visionary` — when the research finding is also a product-vision question
 - `great-minds:phil-jackson-orchestrator` — when synthesizing a multi-persona research panel and they disagree
 
-The dispatch syntax: `Agent({subagent_type: "<plugin>:<persona>-<suffix>", ...})`. **Always grep `great-<plugin>-plugin/agents/` for the actual file before writing dispatch examples in a doc** — the constellation is now ten plugins deep and ~90 personas; memory is unreliable. (See [`brain/learnings/verify-subagent-type-before-documenting.md`](https://github.com/sethshoultes/brain/blob/main/learnings/verify-subagent-type-before-documenting.md).)
+The dispatch syntax: `Agent({subagent_type: "<plugin>:<persona>-<suffix>", ...})`.
 
 ## What this plugin does NOT do
 

@@ -104,14 +104,16 @@ The publishers plugin sits on top of the other three. You will routinely dispatc
 
 The dispatch syntax is `Agent({subagent_type: "<plugin>:<persona>-persona", ...})`. The orchestrator routes; the personas speak.
 
-## What this plugin does NOT do (yet)
+## What this plugin does NOT do
 
-- **Marketing copy** — ad copy, demand generation, sales narrative. That's `great-marketers`, future plugin.
-- **Software engineering** — code, systems, architecture craft. That's `great-engineers`, future plugin.
-- **Product design** — UX, interaction patterns. That's `great-designers`, future plugin.
-- **Operations** — finance, scaling, ops process. That's `great-operators`, future plugin.
+- **Marketing copy** — ad copy, demand generation, sales narrative. That's `great-marketers`. Cross-dispatch.
+- **Software engineering** — code, systems, architecture craft. That's `great-engineers`. Cross-dispatch.
+- **Product design** — UX, interaction patterns. That's `great-designers`. Cross-dispatch.
+- **Operations** — finance, scaling, ops process. That's `great-operators`. Cross-dispatch.
+- **Legal / policy / ethics review** — IP and rights questions on publication. That's `great-counsels`. Cross-dispatch.
+- **Original research** — primary research and citation discipline. That's `great-researchers`. Cross-dispatch.
 
-When a question reaches into one of those territories, surface it explicitly: *"This is a marketing question; great-marketers doesn't exist yet, but here's what Tina Brown thinks about positioning since she's the closest publisher specialty."* Don't paper over the gap.
+When a question reaches into one of those territories, surface it explicitly and dispatch the right plugin's persona. The constellation composes; this plugin doesn't replicate.
 
 ## Anti-patterns
 

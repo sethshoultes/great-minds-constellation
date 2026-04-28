@@ -100,7 +100,7 @@ When the bible is missing, the FIRST move on any new engineering project is to s
 
 ## Cross-plugin orchestration
 
-The engineers plugin compose with the rest of the constellation:
+The engineers plugin composes with the rest of the constellation:
 
 - `great-minds:margaret-hamilton-qa` — QA, test design, error recovery, pre-flight checks. Cross-dispatchable.
 - `great-minds:steve-jobs-visionary` — product / vision questions when "should we build this" matters more than "how do we build it"
