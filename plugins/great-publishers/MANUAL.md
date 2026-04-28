@@ -5,8 +5,8 @@ Complete reference for the `great-publishers` Claude Code plugin. For the execut
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-publishers-plugin
-/plugin install great-publishers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-publishers@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:
@@ -156,7 +156,7 @@ These are encoded in the constellation and the publishers plugin must inherit th
 
 ## 6. Cross-plugin orchestration
 
-The publishers plugin sits on top of the trilogy:
+The publishers plugin sits on top of the rest of the constellation:
 
 | Plugin | Role |
 |---|---|

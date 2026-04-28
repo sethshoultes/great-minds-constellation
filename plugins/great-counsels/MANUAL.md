@@ -7,8 +7,8 @@ Complete reference for the `great-counsels` Claude Code plugin. For the executiv
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-counsels-plugin
-/plugin install great-counsels@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-counsels@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:

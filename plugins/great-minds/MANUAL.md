@@ -2,9 +2,9 @@
 
 **Audience:** developers, teams, and individual builders who want fourteen world-class advisors at the command line — debating, reviewing, planning, and (in agency mode) shipping work end-to-end.
 
-This is the long-form reference. For a quick overview see the [README](README.md). For the underlying design philosophy across the trilogy see [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html).
+This is the long-form reference. For a quick overview see the [README](README.md). For the underlying design philosophy across the constellation see [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html).
 
-## Companion manuals in the trilogy
+## Companion manuals in the constellation
 
 - **Great Minds — User Manual (this document)** — fourteen strategic decision-makers (Jobs, Musk, Buffett, Ive, Rubin, Huang, Winfrey, Rhimes, Blakely, Hamilton, Angelou, Sorkin, Aurelius, Jackson)
 - [Great Authors — User Manual](https://github.com/sethshoultes/great-authors-plugin/blob/main/MANUAL.md) — eleven prose craft personas (Hemingway, Didion, McCarthy, Morrison, Wallace, etc., plus Gottlieb the editor)
@@ -44,13 +44,7 @@ You can use it two ways:
 
 Both modes share the same fourteen personas. Pick the mode that matches how you want to work.
 
-Great Minds is the first plugin in a trilogy:
-
-- **`great-minds-plugin`** (this one) — strategic decision-makers (fourteen voices)
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft (ten voices)
-- [`great-filmmakers-plugin`](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft (twelve voices)
-
-All three share the persona dispatch pattern. Great Minds adds the autonomous agency layer on top.
+Great Minds is one plugin in the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains. All plugins share the persona dispatch pattern. Great Minds adds the autonomous agency layer on top.
 
 ---
 
@@ -76,16 +70,16 @@ All three install the same fourteen personas — the difference is what's wrappe
 
 ## 3. Install
 
-### Full agency (Claude Code)
+### Full agency (Claude Code) — recommended via the constellation marketplace
 
 ```bash
-/plugin marketplace add sethshoultes/great-minds-plugin
-/plugin install great-minds@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-minds@great-minds-constellation
 ```
 
 The full set of 17 skills becomes available in your next Claude Code session.
 
-### Lite plugin (Claude Cowork or Code)
+### Lite plugin (Claude Cowork or Code) — only available via the standalone marketplace
 
 ```bash
 /plugin marketplace add sethshoultes/great-minds-plugin
@@ -111,8 +105,8 @@ The DXT bundle exposes three MCP tools — `debate`, `board_review`, and `plan` 
 Most projects benefit from running great-minds alongside great-authors and great-filmmakers:
 
 ```bash
-/plugin install great-authors@sethshoultes
-/plugin install great-filmmakers@sethshoultes
+/plugin install great-authors@great-minds-constellation
+/plugin install great-filmmakers@great-minds-constellation
 ```
 
 Each plugin's personas know about the others. Phil Jackson (in great-minds) is the orchestrator who can dispatch into great-authors or great-filmmakers when the work needs a specialist voice.
@@ -202,7 +196,7 @@ The board doesn't build. They review, advise, and file findings. In agency mode 
 
 Phil Jackson (or Marcus Aurelius, depending on context) is the coordinator — never the contributor. The orchestrator dispatches work, mediates between Steve and Elon when they disagree, decides what gets built next. In a Claude Code session, **you (the human) are also operating in this role** — you're orchestrating the orchestrator, telling Phil where to focus.
 
-The trilogy's core principle: **dispatch, don't impersonate**. When you want Jobs's perspective, don't write *"Jobs would say…"* — run `/agency-channel jobs` (or invoke the persona via the Agent tool) and let the persona file produce its own voice.
+The constellation's core principle: **dispatch, don't impersonate**. When you want Jobs's perspective, don't write *"Jobs would say…"* — run `/agency-channel jobs` (or invoke the persona via the Agent tool) and let the persona file produce its own voice.
 
 ### What varies between modes
 
@@ -818,7 +812,7 @@ You probably skipped the project context. The debate command reads SOUL.md and U
 
 ### Lite plugin is missing pipeline commands
 
-That's expected — `/agency-launch`, `/agency-execute`, `/agency-verify`, `/agency-ship`, `/agency-daemon`, `/agency-crons` are full-agency-only. If you need them, install the full plugin (`great-minds@sethshoultes`) instead of the lite (`great-minds-lite@sethshoultes`).
+That's expected — `/agency-launch`, `/agency-execute`, `/agency-verify`, `/agency-ship`, `/agency-daemon`, `/agency-crons` are full-agency-only. If you need them, install the full plugin (`great-minds@great-minds-constellation`) instead of the lite (`great-minds-lite@sethshoultes` — lite is only available via the standalone marketplace).
 
 ### DXT bundle won't install
 
@@ -909,7 +903,7 @@ If you're still burning quota, check the daemon logs for runaway loops — somet
 
 ### External references
 
-- [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html) — design philosophy across the trilogy
+- [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html) — design philosophy across the constellation
 - [great-authors-plugin](https://github.com/sethshoultes/great-authors-plugin) — prose craft companion
 - [great-filmmakers-plugin](https://github.com/sethshoultes/great-filmmakers-plugin) — film craft companion
 

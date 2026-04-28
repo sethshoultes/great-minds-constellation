@@ -7,8 +7,8 @@ Complete reference for the `great-researchers` Claude Code plugin. For the execu
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-researchers-plugin
-/plugin install great-researchers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-researchers@great-minds-constellation
 ```
 
 For Claude Desktop:

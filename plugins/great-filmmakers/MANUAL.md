@@ -5,7 +5,7 @@
 
 This is the long-form reference. For a quick overview, see the [README](README.md). For the underlying design philosophy, see the essay [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html).
 
-## Companion manuals in the trilogy
+## Companion manuals in the constellation
 
 - [Great Minds — User Manual](https://github.com/sethshoultes/great-minds-plugin/blob/main/MANUAL.md) — fourteen strategic decision-makers (Jobs, Musk, Buffett, Ive, Rubin, Huang, Winfrey, Rhimes, Blakely, Hamilton, Angelou, Sorkin, Aurelius, Jackson)
 - [Great Authors — User Manual](https://github.com/sethshoultes/great-authors-plugin/blob/main/MANUAL.md) — eleven prose craft personas (Hemingway, Didion, McCarthy, Morrison, Wallace, etc., plus Gottlieb the editor)
@@ -39,13 +39,7 @@ Great Filmmakers is a Claude Code plugin that turns a single conversation into a
 
 The personas are not impressionistic pastiches. Each is a named filmmaker with a specific craft slot — Schoonmaker for the cut, Deakins for the frame, Zimmer for the score, Ferretti for the world the camera sees. When you invoke them through the orchestration commands, you get craft feedback that doesn't collapse into Claude's default register.
 
-Great Filmmakers is the third plugin in a trilogy:
-
-- [`great-minds-plugin`](https://github.com/sethshoultes/great-minds-plugin) — strategic decision-makers (fourteen voices)
-- [`great-authors-plugin`](https://github.com/sethshoultes/great-authors-plugin) — prose craft (ten voices)
-- **`great-filmmakers-plugin`** (this one) — film craft (twelve voices)
-
-All three share a single pattern: **persona + bible + save triggers + fan-out + output format**. Section 3 explains what that means and why it matters.
+Great Filmmakers is one plugin in the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — 10 plugins for different craft domains. All constellation plugins share a single pattern: **persona + bible + save triggers + fan-out + output format**. Section 3 explains what that means and why it matters.
 
 ---
 
@@ -54,8 +48,8 @@ All three share a single pattern: **persona + bible + save triggers + fan-out + 
 ### Marketplace install (recommended)
 
 ```
-/plugin marketplace add sethshoultes/great-filmmakers-plugin
-/plugin install great-filmmakers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-filmmakers@great-minds-constellation
 ```
 
 That's it. The plugin's commands (`/filmmakers-project-init`, `/filmmakers-channel`, `/filmmakers-edit`, `/filmmakers-critique`, `/filmmakers-debate`, `/filmmakers-crew`) become available in your next Claude Code session.
@@ -65,7 +59,7 @@ That's it. The plugin's commands (`/filmmakers-project-init`, `/filmmakers-chann
 Most projects benefit from running great-filmmakers alongside great-authors:
 
 ```
-/plugin install great-authors@sethshoultes
+/plugin install great-authors@great-minds-constellation
 ```
 
 The two share the same `.great-authors/` bible at the project root. Authors writes prose into `manuscript/`; filmmakers writes film artifacts into `film/`. Section 7 covers the layout in detail.
@@ -78,7 +72,7 @@ If you'll use `/filmmakers-crew --backend veo3` to render multi-character cinema
 
 ## 3. The mental model
 
-Every persona-driven plugin in the trilogy is built from four reusable pieces plus one piece that varies. Understanding this makes the rest of the manual much faster to absorb.
+Every persona-driven plugin in the constellation is built from four reusable pieces plus one piece that varies. Understanding this makes the rest of the manual much faster to absorb.
 
 ### Piece 1 — The persona
 

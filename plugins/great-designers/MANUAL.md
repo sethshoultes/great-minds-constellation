@@ -5,8 +5,8 @@ Complete reference for the `great-designers` Claude Code plugin. For the executi
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-designers-plugin
-/plugin install great-designers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-designers@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:

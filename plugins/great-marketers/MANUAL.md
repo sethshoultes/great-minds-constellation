@@ -5,8 +5,8 @@ Complete reference for the `great-marketers` Claude Code plugin. For the executi
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-marketers-plugin
-/plugin install great-marketers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-marketers@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:

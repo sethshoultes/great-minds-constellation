@@ -2,9 +2,9 @@
 
 This is the operational guide. The [README](./README.md) tells you what's in the plugin; this document tells you how to use it. Read the quick start first to get to a useful output in fifteen minutes; come back to the rest as you need it.
 
-For the design philosophy behind the plugin, see [ORCHESTRATING.md](./ORCHESTRATING.md). For per-release history, see [CHANGELOG.md](./CHANGELOG.md). For the canonical instructions Claude Code loads at runtime, see each skill's `SKILL.md`. For the design philosophy across the persona trilogy as a whole, see [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html).
+For the design philosophy behind the plugin, see [ORCHESTRATING.md](./ORCHESTRATING.md). For per-release history, see [CHANGELOG.md](./CHANGELOG.md). For the canonical instructions Claude Code loads at runtime, see each skill's `SKILL.md`. For the design philosophy across the constellation as a whole, see [Three Shapes of the Same Pattern](https://sethshoultes.com/blog/three-shapes.html).
 
-## Companion manuals in the trilogy
+## Companion manuals in the constellation
 
 - [Great Minds — User Manual](https://github.com/sethshoultes/great-minds-plugin/blob/main/MANUAL.md) — fourteen strategic decision-makers (Jobs, Musk, Buffett, Ive, Rubin, Huang, Winfrey, Rhimes, Blakely, Hamilton, Angelou, Sorkin, Aurelius, Jackson)
 - **Great Authors — User Manual (this document)** — twelve prose craft personas (Hemingway, Didion, McCarthy, Morrison, Wallace, etc., plus Gottlieb the editor)
@@ -34,8 +34,8 @@ You have the plugin installed. You want to write something. Here is the shortest
 
 **Claude Code:**
 ```
-/plugin marketplace add sethshoultes/great-authors-plugin
-/plugin install great-authors@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-authors@great-minds-constellation
 /reload-plugins
 ```
 
@@ -448,8 +448,8 @@ Use git. Every persona's brief assumes you commit per logical unit, so undoing i
 
 After bumping versions in the plugin source, you need:
 ```
-/plugin marketplace update sethshoultes
-/plugin update great-authors@sethshoultes
+/plugin marketplace update great-minds-constellation
+/plugin update great-authors@great-minds-constellation
 /reload-plugins
 ```
 

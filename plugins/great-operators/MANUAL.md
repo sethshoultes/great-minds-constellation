@@ -5,8 +5,8 @@ Complete reference for the `great-operators` Claude Code plugin. For the executi
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-operators-plugin
-/plugin install great-operators@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-operators@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:

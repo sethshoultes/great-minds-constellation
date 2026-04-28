@@ -5,8 +5,8 @@ Complete reference for the `great-engineers` Claude Code plugin. For the executi
 ## 1. Install
 
 ```
-/plugin marketplace add sethshoultes/great-engineers-plugin
-/plugin install great-engineers@sethshoultes
+/plugin marketplace add sethshoultes/great-minds-constellation
+/plugin install great-engineers@great-minds-constellation
 ```
 
 For Claude Desktop, build the DXT bundle:
