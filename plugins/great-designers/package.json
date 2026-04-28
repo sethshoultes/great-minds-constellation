@@ -1,0 +1,15 @@
+{
+  "name": "great-designers",
+  "version": "0.1.0",
+  "description": "Nine design personas + four operational skills for product, UX, and visual design craft. Claude Code plugin.",
+  "license": "MIT",
+  "author": "Seth Shoultes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethshoultes/great-designers-plugin"
+  },
+  "keywords": ["design", "ux", "ui", "interaction-design", "design-systems", "claude-code-plugin"],
+  "scripts": {
+    "test": "bash tests/smoke.sh"
+  }
+}

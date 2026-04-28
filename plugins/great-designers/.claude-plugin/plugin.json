@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-designers",
+  "version": "0.1.0",
+  "description": "Nine design personas (Norman, Zhuo, Spool, Rams, Kare, Cagan, Scher, Hatfield, Tufte) plus four operational skills for design specs, audits, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Seventh in the Great Minds constellation. Jony Ive stays in great-minds for strategic visual taste (cross-dispatchable); designers handles hands-on craft.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-designers-plugin",
+  "license": "MIT",
+  "keywords": ["design", "ux", "ui", "interaction-design", "design-systems", "personas", "claude-code-plugin"]
+}

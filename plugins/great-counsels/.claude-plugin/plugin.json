@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-counsels",
+  "version": "0.1.0",
+  "description": "Nine counsel personas (RBG, Marshall, Scalia, Lessig, Wu, Brandeis, Sunstein, Arendt, Rawls) plus four operational skills for legal memos, policy memos, ethics reviews, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Ninth in the Great Minds constellation. The 'should we?' persona set, distinct from the 'can we?' execution plugins. NOT LEGAL ADVICE — a craft register, not a substitute for licensed counsel.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-counsels-plugin",
+  "license": "MIT",
+  "keywords": ["legal", "policy", "ethics", "jurisprudence", "antitrust", "personas", "claude-code-plugin"]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "great-minds-constellation",
+  "description": "The full Great Minds constellation: ten plugins covering founder-class personas, authors, filmmakers, designers, engineers, marketers, publishers, counsels, operators, and researchers. ~111 personas, ~71 skills total. Install only the plugins your project needs.",
+  "owner": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "plugins": [
+    {
+      "name": "great-minds",
+      "description": "Founder-class personas (Steve Jobs, Elon Musk, Marcus Aurelius, Jensen Huang, Margaret Hamilton, Phil Jackson, Sara Blakely, Maya Angelou, Jony Ive, Rick Rubin) — strategic decision-making and orchestration.",
+      "source": "./plugins/great-minds",
+      "category": "productivity"
+    },
+    {
+      "name": "great-authors",
+      "description": "Eleven author personas (Hemingway, McCarthy, Didion, Baldwin, Morrison, McPhee, Wallace, Orwell, King, Le Guin, Vonnegut) plus Gottlieb the editor — prose craft and editorial work.",
+      "source": "./plugins/great-authors",
+      "category": "productivity"
+    },
+    {
+      "name": "great-filmmakers",
+      "description": "Twelve filmmaker personas — directors, writers, and craft specialists for scene breakdown, shot design, and film-craft work.",
+      "source": "./plugins/great-filmmakers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-publishers",
+      "description": "Eight publisher/editor/designer personas (Chip Kidd, Tina Brown, Maxwell Perkins, Jann Wenner, Bob Silvers, Diana Vreeland, Bennett Cerf, George Lois) for publication-form work.",
+      "source": "./plugins/great-publishers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-marketers",
+      "description": "Eight advertising/marketing personas (Ogilvy, Bernbach, Wells Lawrence, Clow, Reeves, Lansdowne Resor, Barton, Sutherland) for positioning, ad copy, and launch composition.",
+      "source": "./plugins/great-marketers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-engineers",
+      "description": "Nine engineering personas (Carmack, Hopper, Knuth, Torvalds, DHH, Hejlsberg, Eich, Dijkstra, Sandi Metz) for technical specs, design reviews, and engineering work.",
+      "source": "./plugins/great-engineers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-designers",
+      "description": "Nine design personas (Norman, Zhuo, Spool, Rams, Kare, Cagan, Scher, Hatfield, Tufte) for design specs, audits, and product discovery.",
+      "source": "./plugins/great-designers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-counsels",
+      "description": "Nine counsel personas (RBG, Marshall, Scalia, Lessig, Wu, Brandeis, Sunstein, Arendt, Rawls) for legal/policy memos and ethics reviews. NOT LEGAL ADVICE — a craft register.",
+      "source": "./plugins/great-counsels",
+      "category": "productivity"
+    },
+    {
+      "name": "great-operators",
+      "description": "Nine operations personas (Cook, Grove, Munger, McCord, Deming, Ohno, Horowitz, Walton, Kelleher) for operating plans, process reviews, and operational craft.",
+      "source": "./plugins/great-operators",
+      "category": "productivity"
+    },
+    {
+      "name": "great-researchers",
+      "description": "Nine researcher personas (Sagan, Gould, Roach, Sacks, Gawande, Diamond, Wilson, Skloot, Caro) for studies, peer reviews, and research craft. NOT ACADEMIC ADVICE — a craft register.",
+      "source": "./plugins/great-researchers",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "great-counsels",
+  "version": "0.1.0",
+  "description": "Nine counsel personas + four operational skills for legal, policy, and ethics craft. Claude Code plugin. Not a substitute for licensed legal counsel.",
+  "license": "MIT",
+  "author": "Seth Shoultes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethshoultes/great-counsels-plugin"
+  },
+  "keywords": ["legal", "policy", "ethics", "jurisprudence", "antitrust", "claude-code-plugin"],
+  "scripts": {
+    "test": "bash tests/smoke.sh"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-researchers",
+  "version": "0.1.0",
+  "description": "Nine researcher personas (Sagan, Gould, Roach, Sacks, Gawande, Diamond, Wilson, Skloot, Caro) plus four operational skills for studies, peer reviews, and project initialization. Drafted by great-authors writers via cross-plugin orchestration. Tenth and final v0.1 plugin in the Great Minds constellation. NOT ACADEMIC ADVICE — a craft register. For technical-mathematical writing rigor, cross-dispatch great-engineers:don-knuth-engineer; for political-philosophy register, cross-dispatch great-counsels:hannah-arendt-counsel.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-researchers-plugin",
+  "license": "MIT",
+  "keywords": ["research", "science-communication", "literature-review", "citation-discipline", "essay", "personas", "claude-code-plugin"]
+}

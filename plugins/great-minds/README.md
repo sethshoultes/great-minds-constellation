@@ -1,0 +1,466 @@
+# Great Minds
+
+14 legendary personas (Jobs, Musk, Buffett, Ive, Rubin, Huang, Winfrey, Rhimes, Blakely, Hamilton, Angelou, Sorkin, Aurelius, Jackson) plus 8 functional-role implementers — that debate, review, plan, and build. Available in three install formats to match how you work.
+
+📖 **[Read the User Manual](MANUAL.md)** for the complete reference — install paths, all 22 agents (14 named + 8 functional), all 17 skills, lite vs full agency workflows, project structure, memory store, three end-to-end walkthroughs, patterns, and troubleshooting.
+
+## Newcomer? Start here
+
+```
+/constellation-start
+```
+
+The discoverable entry point for the Great Minds constellation. Asks 2-3 questions about your project shape and routes to the right plugin's project-init skill — or channels Phil Jackson (constellation-aware as of v1.3) for ambiguous or mixed projects. Always ensures the bible at `.great-authors/project.md` exists, since that's the shared spine across all five plugins.
+
+If you already know which plugin you want, you can skip the entry point and run that plugin's project-init directly. `/constellation-start` exists for the case where you don't.
+
+## What's new in v1.4
+
+Polish from the cross-plugin quality review. No new user-facing features; everything is hygiene and parity with the rest of the constellation.
+
+### Added
+
+- **`tests/smoke.sh`** — first smoke test for great-minds. Validates SKILL.md frontmatter, persona frontmatter (name / description / model / color), DXT persona-subset membership against `agents/`, version coherence across `package.json` / `plugin.json` / DXT manifests / DXT server self-report, DXT tool-handler alignment, and v1.3+ `/constellation-start` skill presence.
+- **`LICENSE`** — MIT, matching the rest of the constellation. The plugin had been shipping without one.
+- **Frontmatter** added to three SKILL.md files that predated the convention: `agency-daemon`, `scope-check`, `agency-memory`.
+- **`color:` field** added to `aaron-sorkin-screenwriter.md` (the only persona missing it).
+
+### Changed
+
+- **`distribution/plugin/skills/constellation-start/`** — the lite distribution now includes the constellation entry point. Newcomers using the lite install can run `/constellation-start` without falling back to the full bundle. Phil Jackson's persona file in lite is also resynced with the constellation-aware expansion from v1.3.
+
+### Why
+
+A cross-plugin review pass surfaced these as accumulated drift. None were user-blocking, but together they were a real consistency gap — every other plugin in the constellation had smoke tests, and great-minds was the most likely to drift without them given its breadth (22 personas, 20 skills, infrastructure for a swarm runtime).
+
+## What's new in v1.3
+
+**Constellation-level entry point.** The plugin now has a discoverable starting point for newcomers to the entire Great Minds constellation (great-minds + great-authors + great-filmmakers + great-publishers + great-marketers — five plugins, each owning one craft).
+
+- **`/constellation-start`** (new skill) — asks project-shape questions, routes to the right plugin's project-init or channels Phil Jackson for mixed projects. Discoverable, lightweight, ~150 lines.
+- **`phil-jackson-orchestrator.md`** (expanded) — Phil's existing role (Zen-master swarm orchestrator within great-minds) is preserved unchanged; a new "Your Role at the Constellation Level" section adds the orchestration knowledge for cross-plugin work. Same triangle-offense logic; one level up. Eleven rings, not one.
+- **DXT bundle** — adds the `constellation_start` tool. Available in Claude Desktop alongside the existing tools.
+- **Version coherence** — DXT manifests caught up to plugin.json baseline (was 1.0.0; now 1.3.0 to match). Cleaner state for future smoke-test infrastructure.
+
+Doesn't break anything. `/agency-start` and the entire `agency-*` swarm-pattern family stay intact — they're the right answer for software-product swarm projects, and `/constellation-start` dispatches *to* them when the user picks that branch.
+
+## What's new in v1.2
+
+The three-layer architecture is now explicit and shipping. Grounded in 2026 research (Wharton, USC) on persona prompting — named expert personas excel at judgment but reduce factual accuracy on knowledge-heavy tasks; functional roles avoid that trap.
+
+- **Layer 1 — Named directors (Sonnet):** Jobs, Musk, Hamilton, Aurelius, the Board. Vision, judgment, mediation.
+- **Layer 2 — Named specialists (Sonnet):** Ive, Angelou, Rubin, Sorkin, Blakely. Domain craft with character.
+- **Layer 3a — Functional code-writers (Sonnet, NEW):** `backend-engineer`, `frontend-developer`, `database-architect`, `devops-engineer`, `test-engineer`. Code that integrates with a real codebase needs Sonnet's reasoning even without a named voice.
+- **Layer 3b — Functional reviewers / doc-writers (Haiku, NEW):** `code-reviewer`, `security-auditor`, `documentation-writer`. Pattern-matching and recall work where Haiku's speed and cost win.
+
+The directors at Layer 1 now know which kind of work to dispatch to which layer — codified in their persona files and in `AGENTS.md`. Steve and Elon dispatch to Layer 2 for craft and Layer 3 for code; Margaret dispatches to Layer 3 for QA work; Aurelius coordinates across layers. Three-layer model documented in `MANUAL.md` Section 4 and `docs/OPERATIONS.md`.
+
+## Recommended companion: Superpowers
+
+Great Minds and the [Superpowers](https://github.com/anthropics/skills) plugin operate at **different altitudes** and compose well:
+
+- **GSD (built into Great Minds)** — the agency-level pipeline: PRD → debate → plan → execute → verify → ship. Coordinates *which kind of work happens when* across multiple agents over a multi-day project.
+- **Superpowers** — the engineer-level discipline within each task: TDD, systematic debugging, plan-then-execute, worktree isolation, pre-merge verification, code review patterns.
+
+Use them together: GSD orchestrates the agency; Superpowers gives the Layer 3 code-writers and reviewers the engineering discipline they need within each dispatch. The directors at Layer 1 don't follow Superpowers TDD discipline (their work isn't TDD-shaped), but the `backend-engineer`, `frontend-developer`, `test-engineer`, `code-reviewer`, and `security-auditor` agents do.
+
+Specific composition:
+
+| GSD pipeline phase | Apply Superpowers skill |
+|--------------------|-------------------------|
+| `/agency-plan` | `writing-plans`, `brainstorming` |
+| `/agency-execute` | `subagent-driven-development`, `using-git-worktrees`, `dispatching-parallel-agents` |
+| `/agency-verify` | `verification-before-completion`, `systematic-debugging` |
+| Layer 3 code-writer dispatch | `test-driven-development`, `requesting-code-review` |
+| Pre-merge | `receiving-code-review`, `finishing-a-development-branch` |
+
+Install Superpowers if you want the engineering-discipline layer beneath the agency-pipeline layer. Both plugins keep their own identities and update cadences — they're composed, not merged.
+
+
+
+## Contents
+
+- [Pick your format](#pick-your-format)
+- [Install](#install)
+- [What You Get (full agency)](#what-you-get)
+- [Agents](#14-agent-personas--2-internal-consolidation-functions)
+- [Skills](#17-skills-slash-commands)
+- [Contributor setup](#contributor-setup)
+
+## Pick your format
+
+| Format | Install target | Best for | Where |
+|--------|---------------|----------|-------|
+| **`great-minds`** (full) | Claude Code | Power users running the autonomous PRD → ship pipeline (cron, daemon, worktrees) | this repo root |
+| **`great-minds-lite`** | Claude Cowork + Claude Code | Teams that want personas + co-work skills (debate, board review, plan) without the swarm | `distribution/plugin/` |
+| **DXT bundle** | Claude Desktop app | Non-technical teammates, one-click install | `distribution/dxt/` |
+
+All three share the same 14 personas. Edit once in `agents/` at repo root — a pre-commit hook syncs to the other targets.
+
+## Install
+
+**Full agency (Claude Code):**
+```bash
+/plugin marketplace add sethshoultes/great-minds-plugin
+/plugin install great-minds@sethshoultes
+```
+
+**Lite (Cowork or Code):**
+```bash
+/plugin marketplace add sethshoultes/great-minds-plugin
+/plugin install great-minds-lite@sethshoultes
+```
+
+**DXT (Desktop app):**
+```bash
+cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack
+# Share the generated great-minds.dxt — teammates double-click to install.
+```
+
+See [`distribution/README.md`](distribution/README.md) for full details on the lite + DXT options.
+
+## What You Get
+
+_(The sections below document the **full** `great-minds` agency. For the slim lite plugin or DXT tool list, see [`distribution/README.md`](distribution/README.md).)_
+
+## What You Get
+
+### 14 Agent Personas + 2 Internal Consolidation Functions
+
+| Agent | Role |
+|-------|------|
+| `phil-jackson-orchestrator` | Orchestrator — system coordination, dispatch, resource optimization |
+| `steve-jobs-visionary` | Design & Brand — simplicity, taste, the human experience |
+| `elon-musk-persona` | Product & Growth — first principles, feasibility, scale |
+| `jensen-huang-board` | Board Member — tech strategy, data moats, platform economics |
+| `oprah-winfrey-board` | Board Member — audience connection, storytelling, accessibility |
+| `warren-buffett-board` | Board Member — business model, unit economics, moat durability |
+| `shonda-rhimes-board` | Board Member — narrative & engagement, retention loops, cliffhangers |
+| `margaret-hamilton-qa` | QA Director — zero-defect methodology, continuous testing |
+| `rick-rubin-creative` | Creative Director — strip to essence, authenticity |
+| `jony-ive-designer` | Visual Design — spacing, hierarchy, craft, inevitability |
+| `maya-angelou-writer` | Copywriting — warmth, rhythm, dignity, emotional resonance |
+| `aaron-sorkin-screenwriter` | Screenwriter — video scripts, demos, tutorials, launch videos |
+| `sara-blakely-growth` | Growth Strategy — scrappy, customer-first, grassroots |
+| `marcus-aurelius-mod` | Moderator — Stoic orchestration, conflict mediation |
+
+The daemon pipeline also uses 2 internal consolidation functions (not standalone agents):
+- `philJacksonConsolidation` — Merges debate decisions into a single blueprint after Round 2
+- `boardConsolidation` — Consolidates all 4 board member reviews into a unified verdict
+
+### 17 Skills (Slash Commands)
+
+| Command | Description |
+|---------|-------------|
+| `/agency-start <name>` | Initialize a new agency project with full system files, dirs, memory, and crons |
+| `/agency-launch` | Launch the pipeline: debate → plan → execute → verify → ship |
+| `/agency-status` | Comprehensive health check — pipeline, crons, memory, server, GitHub, commits |
+| `/agency-debate <topic>` | Structured 2-round Steve vs. Elon debate with Rick Rubin essence check |
+| `/agency-plan` | GSD-style structured task planning with XML plans |
+| `/agency-execute` | Wave-based parallel execution with fresh context per task |
+| `/agency-verify` | Automated UAT verification + QA pipeline (build, a11y, security, live site) |
+| `/agency-board-review` | Full board review — Jensen, Oprah, Warren, Shonda review in parallel, then consolidate |
+| `/agency-ship` | Ship phase — merge, deploy, retrospective, scoreboard update |
+| `/agency-crons` | Install decoupled cron system (bash + haiku, no bottleneck) |
+| `/agency-memory` | Memory operations — store, recall, consolidate learnings |
+| `/agency-publish` | Publish deliverables to external platforms |
+| `/agency-video` | Generate video scripts and storyboards |
+| `/agency-daemon` | Long-running Agent SDK daemon -- continuous orchestration, replaces cron pipeline |
+| `/agency-anatomy` | File anatomy -- token estimates per file for context budgeting |
+| `/agency-tokens` | Token ledger -- cost tracking per agent across pipeline runs |
+| `/scope-check` | Detect scope creep against original plan |
+
+### Hooks
+
+- **SubagentStop** — Reminds directors to review output and not go idle
+- **Context Guard** — Warns when context is getting large, suggests fresh agents
+
+### Templates
+
+- Project system files (SOUL.md, AGENTS.md, TASKS.md, STATUS.md, etc.)
+- `.planning/` directory (GSD-style: PROJECT.md, REQUIREMENTS.md, ROADMAP.md, STATE.md)
+- PRD template
+- Agent hiring template
+
+## The Pipeline
+
+```
+PRD → Debate (2 rounds) → /agency-plan → /agency-execute → /agency-verify → Ship
+```
+
+Each phase uses the right tool:
+- **Debate**: Agent tool with worktree isolation (Steve + Elon in parallel)
+- **Plan**: Structured XML task plans verified against PRD requirements
+- **Execute**: Wave-based parallel agents, each with fresh context + isolated worktree
+- **Verify**: Margaret QA — build, lint, tests, requirement coverage
+- **Ship**: Merge, update scoreboard, memory write
+
+## Architecture
+
+```
+You (Phil Jackson — Orchestrator)
+  ├── Board of Directors (parallel via /agency-board-review)
+  │    ├── Jensen Huang — Tech Strategy (cron reviews, GitHub issues)
+  │    ├── Oprah Winfrey — Audience & Accessibility
+  │    ├── Warren Buffett — Business & Economics
+  │    └── Shonda Rhimes — Narrative & Engagement
+  ├── Agent tool (worktree) → Steve Jobs — Creative Director
+  │    └── Agent tool (haiku) → Jony Ive, Maya Angelou, Rick Rubin
+  ├── Agent tool (worktree) → Elon Musk — Product Director
+  │    └── Agent tool (haiku) → Sara Blakely + engineering sub-agents
+  └── Agent tool (worktree) → Margaret Hamilton — QA Director
+```
+
+**Key insight:** Agent tool with worktree isolation is the reliable dispatch method. Each agent gets an isolated copy of the repo, creates a branch, builds, commits, pushes. No conflicts, no context rot.
+
+### What does NOT work
+
+- `tmux send-keys` — Claude Code's input buffer rejects pasted prompts. Workers sit idle.
+- Cron dispatch via tmux — can't reliably send commands to other terminals
+- In-conversation crons — bottleneck the main agent
+
+### Daemon (Primary Orchestration)
+
+The daemon (`/agency-daemon`) is an Agent SDK-based long-running process that replaces the cron pipeline. It handles dispatch, health checks, dream consolidation, and memory maintenance in a single persistent process.
+
+## Daemon Sync
+
+⚠️ **TEMPORARY TOOL — Scheduled for deprecation once daemon is extracted to shared package.**
+
+This tool syncs daemon code from `great-minds-plugin` to the `great-minds` repository. It is a surgical band-aid until the daemon becomes a standalone npm package.
+
+### First Time Setup
+
+Edit hardcoded paths in `sync.sh` (lines 11-12) for your environment:
+
+```bash
+PLUGIN_ROOT="/Users/sethshoultes/Local Sites/great-minds-plugin"
+GREAT_MINDS_ROOT="/home/agent/great-minds"
+```
+
+Examples:
+- macOS: `/Users/yourname/path/to/repo`
+- Linux: `/home/yourname/path/to/repo`
+- Docker: `/app/repo`
+
+### Usage
+
+Run after editing daemon code in the plugin repo:
+
+```bash
+npm run sync
+```
+
+What it does:
+1. Validates destination repo has no uncommitted changes
+2. Copies 11 TypeScript files from `daemon/src/`
+3. Copies `daemon/package.json` and `daemon/README.md`
+4. Copies `BANNED-PATTERNS.md` and `DO-NOT-REPEAT.md`
+5. Updates `CLAUDE.md` with sync protocol and anti-hallucination rules
+6. Runs `npm install` in destination
+7. Commits and pushes changes
+
+Execution time: <5 seconds (excluding git push network time)
+
+**Binary outcome:** Script exits 0 on success, 1 on failure. No partial syncs.
+
+### Deprecation Timeline
+
+- **3 months:** Extract daemon to shared npm package
+- **6 months:** Delete sync.sh if extraction complete, otherwise escalate as architectural debt
+
+### Daemon Resilience
+
+The daemon includes production-grade resilience features:
+
+- **Telegram Notifications** — Real-time alerts for pipeline starts, completions, failures, and hung agents. Requires `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` environment variables.
+- **Crash Recovery** — Failed pipeline phases retry up to 2 times with exponential backoff. If all retries fail, the PRD is archived to `prds/failed/` so it does not block the queue.
+- **Hung Agent Detection** — Individual agents timeout after 20 minutes (`AGENT_TIMEOUT_MS`). The entire pipeline timeout is 60 minutes (`PIPELINE_TIMEOUT_MS`). Hung agents are killed and the phase is retried or skipped.
+
+#### Telegram Setup
+
+1. Message [@BotFather](https://t.me/BotFather) on Telegram and create a new bot (`/newbot`)
+2. Copy the bot token
+3. Send a message to your bot, then fetch your chat ID via `https://api.telegram.org/bot<TOKEN>/getUpdates`
+4. Set environment variables:
+   ```bash
+   export TELEGRAM_BOT_TOKEN="your-bot-token"
+   export TELEGRAM_CHAT_ID="your-chat-id"
+   ```
+
+### Developer Intelligence
+
+Inspired by [OpenWolf](https://github.com/open-wolf), the daemon includes developer intelligence features:
+
+- **File Anatomy** (`/agency-anatomy`) — Token estimates per file, helping agents budget context windows and avoid loading oversized files.
+- **Token Ledger** (`/agency-tokens`) — Tracks token usage and cost per agent across pipeline runs. Shows which agents are expensive and where to optimize.
+- **Bug Memory** — 8 known bugs stored in a searchable buglog (`daemon/buglog.json`). Agents query this before debugging to avoid re-investigating known issues.
+- **Do-Not-Repeat List** — A list of past mistakes and anti-patterns (`daemon/do-not-repeat.json`) injected into every agent session to prevent regression.
+
+### Legacy Cron System (Fallback)
+
+Crons are still available via `/agency-crons` for environments where the daemon cannot run:
+
+| Cron | Model | Cost |
+|------|-------|------|
+| Heartbeat (5 min) | Bash | Free |
+| QA checks (29 min) | Bash | Free |
+| Git monitor (15 min) | Bash | Free |
+| Dispatch (30 min) | Haiku | Cheap |
+| Dream consolidation (60 min) | Haiku | Cheap |
+
+## Prerequisites
+
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)
+- git
+
+That's it. No tmux, no claude-swarm, no external dependencies.
+
+## Quick Start
+
+### Option 1: Claude Code Plugin (Interactive)
+
+Use the plugin directly inside Claude Code for interactive, command-driven builds.
+
+```bash
+# 1. Install the plugin
+npx plugins add sethshoultes/great-minds-plugin
+
+# 2. Start a new project (creates SOUL.md, AGENTS.md, TASKS.md, STATUS.md, prds/)
+/agency-start my-product
+
+# 3. Write a PRD
+#    Create prds/my-product.md describing what you want built.
+#    Use prds/TEMPLATE.md as a starting point.
+
+# 4. Launch the pipeline (one-shot, runs all phases in sequence)
+/agency-launch
+
+# 5. Or run individual phases
+/agency-debate "Should we use React or Astro?"
+/agency-plan
+/agency-execute
+/agency-verify
+/agency-board-review
+/agency-ship
+
+# 6. Check status anytime
+/agency-status
+```
+
+### Option 2: Daemon (Autonomous)
+
+Run the daemon for continuous, autonomous builds. Drop PRDs in and walk away.
+
+```bash
+# 1. Clone the plugin and your target repo
+git clone https://github.com/sethshoultes/great-minds-plugin.git
+git clone https://github.com/your-org/your-project.git
+
+# 2. Install daemon dependencies
+cd great-minds-plugin/daemon
+npm install
+
+# 3. Start the daemon pointed at your repo
+PIPELINE_REPO=/path/to/your-project npx tsx src/daemon.ts
+
+# 4. Drop a PRD in your repo's prds/ directory
+cp prds/TEMPLATE.md /path/to/your-project/prds/my-feature.md
+# Edit the PRD with your requirements
+
+# 5. The daemon automatically:
+#    - Detects the new PRD
+#    - Runs debate (Steve vs Elon, 2 rounds + Rick Rubin + Phil Jackson)
+#    - Plans (task breakdown + Sara Blakely gut check)
+#    - Builds (code, tests, commits)
+#    - QA (2 passes by Margaret Hamilton — including live testing)
+#    - Creative review (Jony Ive, Maya Angelou, Aaron Sorkin)
+#    - Board review (Jensen, Oprah, Buffett, Shonda)
+#    - Ships (commit, push, merge to main, retrospective)
+#    - Archives the PRD to prds/completed/
+```
+
+### Option 3: Docker
+
+```bash
+cd great-minds-plugin/daemon
+docker build -t greatminds-daemon .
+docker run -d \
+  -e PIPELINE_REPO=/repo \
+  -v /path/to/your-project:/repo \
+  greatminds-daemon
+```
+
+### Option 4: Server (systemd)
+
+For always-on autonomous builds on a remote server:
+
+```bash
+# Create the service
+sudo cat > /etc/systemd/system/greatminds-daemon.service << 'EOF'
+[Unit]
+Description=Great Minds Pipeline Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=your-user
+WorkingDirectory=/path/to/great-minds-plugin/daemon
+Environment=PIPELINE_REPO=/path/to/your-project
+Environment=HOME=/home/your-user
+ExecStart=/usr/bin/npx tsx src/daemon.ts
+Restart=always
+RestartSec=10
+StandardOutput=append:/tmp/claude-shared/daemon.log
+StandardError=append:/tmp/claude-shared/daemon.log
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable greatminds-daemon
+sudo systemctl start greatminds-daemon
+```
+
+### Writing a Good PRD
+
+Your PRD is the input that drives everything. A good PRD includes:
+
+1. **Problem** — What problem does this solve?
+2. **Solution** — What are you building?
+3. **Requirements** — Specific, testable requirements
+4. **Technical constraints** — Framework, language, deployment target
+5. **Success criteria** — How do we know it's done?
+
+See `prds/TEMPLATE.md` for the full template.
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PIPELINE_REPO` | `../../` | Target repo the daemon builds in |
+| `AGENT_TIMEOUT_MS` | `1200000` (20 min) | Max time per agent call |
+| `PIPELINE_TIMEOUT_MS` | `3600000` (60 min) | Max time per pipeline run |
+| `TELEGRAM_BOT_TOKEN` | _(none)_ | Telegram notifications |
+| `TELEGRAM_CHAT_ID` | _(none)_ | Telegram chat ID |
+
+## Related Projects
+
+- [great-minds](https://github.com/sethshoultes/great-minds) — The agency repo
+- [shipyard-ai](https://github.com/sethshoultes/shipyard-ai) — Autonomous site builder (spun out)
+- [localgenius](https://github.com/sethshoultes/localgenius) — First product built by the agency
+
+## Contributor setup
+
+One-time, after cloning:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This enables a pre-commit hook that auto-syncs `agents/*.md` edits into `distribution/plugin/` and `distribution/dxt/` so the three formats never drift. Manual sync: `./distribution/sync-distribution.sh`.
+
+## License
+
+MIT

@@ -1,0 +1,15 @@
+{
+  "name": "great-researchers",
+  "version": "0.1.0",
+  "description": "Nine researcher personas + four operational skills for academic/scientific register, literature review, citation discipline. Claude Code plugin.",
+  "license": "MIT",
+  "author": "Seth Shoultes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethshoultes/great-researchers-plugin"
+  },
+  "keywords": ["research", "science-communication", "literature-review", "citation-discipline", "claude-code-plugin"],
+  "scripts": {
+    "test": "bash tests/smoke.sh"
+  }
+}

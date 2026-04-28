@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-publishers",
+  "version": "0.1.0",
+  "description": "Eight publisher/editor/designer personas (Chip Kidd, Tina Brown, Maxwell Perkins, Jann Wenner, Bob Silvers, Diana Vreeland, Bennett Cerf, George Lois) plus four operational skills that consume artifacts from great-authors and great-filmmakers and ship them as book sites, trailers, blog posts, and cover briefs. Fourth in the Great Minds constellation.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-publishers-plugin",
+  "license": "MIT",
+  "keywords": ["publishing", "book-design", "editorial", "magazine", "personas", "claude-code-plugin"]
+}

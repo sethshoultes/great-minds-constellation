@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+
+# Claude Desktop dxt builds live in the standalone plugin repos, not here
+plugins/*/distribution/
+
+# Editor noise
+.vscode/
+.idea/
+*.swp

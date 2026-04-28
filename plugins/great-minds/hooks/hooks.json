@@ -1,0 +1,56 @@
+{
+  "description": "Great Minds agency automation hooks",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/setup-deps.sh\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "PROJECT_DIR=\"${PROJECT_DIR:-$(pwd)}\" bash \"${CLAUDE_PLUGIN_ROOT}/hooks/anatomy-hook.sh\"",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/do-not-repeat-hook.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "context|large|token|long",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "PROJECT_DIR=\"${PROJECT_DIR:-$(pwd)}\" bash \"${CLAUDE_PLUGIN_ROOT}/hooks/context-guard.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": ".+",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "PROJECT_DIR=\"${PROJECT_DIR:-$(pwd)}\" bash \"${CLAUDE_PLUGIN_ROOT}/hooks/context-guard.sh\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SubagentStop\",\"additionalContext\":\"[Great Minds] Sub-agent completed. If you are a Director (Steve/Elon), review the output and decide: commit, revise, or spawn next task. Do not go idle — check your task queue.\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

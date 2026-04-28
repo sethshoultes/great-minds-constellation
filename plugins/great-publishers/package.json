@@ -1,0 +1,9 @@
+{
+  "name": "great-publishers",
+  "version": "0.1.0",
+  "description": "Eight publisher/editor/designer personas + four MVP skills for the publication-form stage. Fourth in the Great Minds constellation.",
+  "author": "Seth Shoultes <seth@caseproof.com>",
+  "repository": "github:sethshoultes/great-publishers-plugin",
+  "license": "MIT",
+  "keywords": ["publishing", "book-design", "editorial", "magazine", "personas", "claude-code-plugin"]
+}
