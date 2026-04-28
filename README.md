@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner.png" alt="The Great Minds constellation: ten plugins, one face per craft — Steve Jobs, Hemingway, Hitchcock, Diana Vreeland, David Ogilvy, Grace Hopper, Dieter Rams, Ruth Bader Ginsburg, Tim Cook, Carl Sagan." width="100%" />
+</p>
+
 # Great Minds Constellation
 
 A unified marketplace for the Great Minds constellation — ten plugins covering ~111 personas across founder, author, filmmaker, design, engineering, marketing, publishing, legal, operations, and research craft. One marketplace to add. Install only the plugins your project needs.
