@@ -4,7 +4,11 @@
 
 # Great Minds Constellation
 
-A unified marketplace for the Great Minds constellation — ten plugins covering ~111 personas across founder, author, filmmaker, design, engineering, marketing, publishing, legal, operations, and research craft. One marketplace to add. Install only the plugins your project needs.
+You know what you want the work to sound like. You just don't always have the right mind in the room.
+
+Great Minds Constellation is ten Claude Code plugins — authors, engineers, designers, counsels, operators, researchers, marketers, filmmakers, publishers, founders — each carrying the craft register of the figures who built those disciplines. Hemingway's economy. Carmack's rigor. Ruth Bader Ginsburg's precision. Carl Sagan's capacity for wonder. Not impressions. Not roleplay. Channels you open when the work calls for a particular kind of judgment.
+
+Install only the plugins your project needs. Each one composes with the others. The table below shows what's inside.
 
 ## Plugins
 
