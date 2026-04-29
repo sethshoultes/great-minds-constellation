@@ -38,10 +38,30 @@ test -d docs/prds && echo "docs/prds" || test -d prds && echo "prds" || test -d 
 ```
 
 ### 1d. List available agent specs
+
+Scan **both** user-level agents AND installed plugin agents (constellation + any standalone great-* plugins still installed):
+
 ```bash
-ls ~/.claude/agents/*.md 2>/dev/null | xargs -I{} basename {} .md || echo "NO_AGENTS"
+{
+  # User-level agents (~/.claude/agents/) — manually-installed agents not from a plugin
+  ls ~/.claude/agents/*.md 2>/dev/null
+  # Constellation plugin agents (cache directory is what Claude Code actually loads)
+  find ~/.claude/plugins/cache/great-minds-constellation -path "*/agents/*.md" 2>/dev/null
+  # Standalone great-* plugin agents (deprecated marketplaces, but may still be installed)
+  find ~/.claude/plugins/cache -maxdepth 5 -path "*/agents/*.md" \
+    \( -path "*great-authors*" -o -path "*great-engineers*" -o -path "*great-designers*" \
+       -o -path "*great-publishers*" -o -path "*great-marketers*" -o -path "*great-filmmakers*" \
+       -o -path "*great-counsels*" -o -path "*great-operators*" -o -path "*great-researchers*" \
+       -o -path "*great-minds-plugin*" \) \
+    -not -path "*great-minds-constellation*" 2>/dev/null
+} | xargs -I{} basename {} .md 2>/dev/null | sort -u
 ```
-Store the list of agent names (without `.md`).
+
+If the scan returns nothing, echo `NO_AGENTS`. Otherwise store the deduplicated list of agent names (without `.md` extension).
+
+**Expect dozens of agents** when the constellation is installed (~80 personas across the plugins). The user will pick a subset in Question 2; do NOT truncate the list silently — show them the full menu.
+
+**If `~/.claude/plugins/cache/` has no constellation directory**, the constellation isn't installed in this environment. Note this in the Phase 2 summary so the user knows to install it (`/plugin install great-minds@great-minds-constellation`) if they want the full persona library.
 
 ---
 
@@ -74,7 +94,7 @@ If they confirm, use the detected name. If they give a new name, use that.
 If the user says 'all': write every name from the scanned list (1d) into `agents.active`, each normalized (lowercase, strip `.md`).
 
 Normalize each name (lowercase, strip `.md`). If the user names an agent not in the detected list, say:
-> "I don't see **{name}** in `~/.claude/agents/` — did you mean one of these? {closest-matches}. You can also say 'skip' to leave it out."
+> "I don't see **{name}** in available agents (user-level `~/.claude/agents/` or installed constellation plugins). Did you mean one of these? {closest-matches}. You can also say 'skip' to leave it out."
 
 ### Question 3 — PRD directory
 If a directory was detected:
