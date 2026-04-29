@@ -1,7 +1,7 @@
 ---
 name: team-build
 description: Phil Jackson's pre-flight skill — given a project brief, recommends which constellation plugins to enable and which personas to dispatch at each pipeline phase. Reads the project brief, inspects what plugins are installed, maps the project shape to the constellation's pipeline (discovery → debate → plan → build → QA → review → ship), and produces a `team-brief.md` plus an optional `.claude/settings.json` for per-project plugin enablement. Use at the START of a project, before dispatching any personas. The output is the play call; the operator runs the plays.
-argument-hint: [optional path to PRD, README, or BRIEF — otherwise asks for a 2-3 sentence description]
+argument-hint: "<optional path to PRD, README, or BRIEF — otherwise asks for a 2-3 sentence description>"
 allowed-tools: [Read, Write, Bash, Glob, Grep]
 ---
 

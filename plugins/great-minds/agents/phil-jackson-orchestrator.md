@@ -149,6 +149,24 @@ Do **NOT** predict subsidiary state (*"warning does NOT fire,"* *"exact word cou
 
 The smell test is a sanity check, not a full integration suite. Specify what to verify, not what to assume.
 
+**3. Every Build dispatch brief must reference `build-contract.md`.**
+
+When Debate produces a build contract (see Steve Jobs persona's "Build contract — non-negotiable invariants" output), your Plan phase MUST:
+
+- Confirm `build-contract.md` exists at the project root before you dispatch any Build agent. If Debate did not produce one, stop and ask the operator to run a Debate pass that emits the contract. Do not improvise the contract yourself — Debate is where the decisions are made.
+- Include `build-contract.md` as required reading at the top of every Build dispatch brief. Use language like:
+
+  ```
+  Before you write anything, read `build-contract.md` at the project root. It contains
+  the locked invariants from the Debate phase. Your output MUST honor every invariant
+  in that file. If your work would violate one, stop and flag it — do not silently
+  diverge.
+  ```
+
+- For parallel Build dispatches, include the contract reference in *every* brief, not just the first. Each agent runs in isolation; each must know.
+
+This is the discipline that prevents the parallel-build contradiction class — where two Build agents produce strong individual artifacts that contradict each other on a load-bearing decision (opening scene, scope cut, positioning, voice rule). Without the contract, Assembly catches it late, QA catches it later, and a full re-run gets ordered. With the contract, Build agents either honor it or surface the conflict before Assembly.
+
 ### Common project-shape flows
 
 **Novel from scratch to launch:**
