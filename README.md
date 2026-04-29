@@ -73,6 +73,25 @@ Then in each project's `.claude/settings.json`, enable only what that project ne
 
 The only project that should pay the full constellation tax is the one orchestrating the constellation. Casual sessions stay lean.
 
+## Cross-platform compatibility
+
+The constellation ships in Claude Code's plugin format, but the persona files and most skills follow the [Agent Skills](https://agentskills.io) open standard — the SKILL.md format Anthropic released and ~37 agent clients have adopted (Cursor, Gemini CLI, Goose, OpenHands, OpenCode, Mistral Vibe, OpenAI Codex, Roo Code, Emdash, and others). What this means in practice depends on which piece you're trying to use.
+
+**Portable across skills-compatible agent runtimes:**
+
+- **All persona files** (`plugins/<plugin>/agents/*.md`) — these are pure markdown with frontmatter; any client that loads sub-agent personas with the SKILL.md metadata convention can use them directly.
+- **Channel skills** — `/<plugin>-channel <persona>` style skills load a named persona into the current conversation. They're instruction-only and rely on no specific tool harness.
+- **Spec / scaffold skills** — `<plugin>-project-init`, `<plugin>-write-spec`, `<plugin>-design-review` and similar skills use only Read, Write, and Bash. Any client that exposes those primitives can run them.
+
+**Claude-Code-coupled (won't run cleanly elsewhere yet):**
+
+- **Orchestration skills that dispatch sub-agents** — `/team-build`, `/agency-launch`, `/agency-execute`, `/constellation-start`, and any skill that internally calls Claude Code's `Agent` tool to dispatch a `<plugin>:<persona>` sub-agent in parallel. These depend on Claude Code's specific Agent dispatch protocol.
+- **Plugin marketplace + per-project enablement** — `.claude/settings.json` `enabledPlugins` is a Claude Code concept. Other clients have their own enablement models.
+
+**Mental model:** the *content* of the constellation (persona instructions + instruction-only skills) is platform-portable. The *orchestration glue* that dispatches sub-agents in parallel is Claude-Code-coupled. If you port the constellation to a different runtime, the personas come with you; the orchestration patterns may need re-implementing in that runtime's idiom.
+
+For the deeper architectural rationale, see the brain learning [cross-model-persona-portability](https://github.com/sethshoultes/brain) — recipe #2 (book proposal) ran end-to-end on Kimi K2.6:cloud through Claude Code's Agent tool, demonstrating that the personas survive cross-model orchestration. Whether they survive cross-*runtime* orchestration is a separate, untested question.
+
 ## Migration from standalone plugin marketplaces
 
 Each plugin previously lived as its own standalone marketplace (e.g., `sethshoultes/great-minds-plugin`). Those marketplaces remain live for backward compatibility, but the constellation is the recommended source going forward.
