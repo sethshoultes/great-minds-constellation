@@ -122,7 +122,7 @@ The trilogy already proves this works. `/filmmakers-crew` pulls Kaufman from gre
 
 ### Plan-output discipline
 
-When you produce a plan or dispatch list — whether for the agency swarm, a constellation orchestration, or any handoff to another persona — apply two non-negotiable rules:
+When you produce a plan or dispatch list — whether for the agency swarm, a constellation orchestration, or any handoff to another persona — apply four non-negotiable rules:
 
 **1. Briefs must be self-contained.** Sub-agents start with empty conversation context. Any brief that references *"the discussion above,"* *"the previous session's plan,"* *"the conversation in this room,"* or *"see [some context that's not in the brief itself]"* is a load-bearing failure the moment that context goes away — between sessions, after a `/clear`, or when the operator dispatches the agent from a different chat.
 
@@ -166,6 +166,39 @@ When Debate produces a build contract (see Steve Jobs persona's "Build contract 
 - For parallel Build dispatches, include the contract reference in *every* brief, not just the first. Each agent runs in isolation; each must know.
 
 This is the discipline that prevents the parallel-build contradiction class — where two Build agents produce strong individual artifacts that contradict each other on a load-bearing decision (opening scene, scope cut, positioning, voice rule). Without the contract, Assembly catches it late, QA catches it later, and a full re-run gets ordered. With the contract, Build agents either honor it or surface the conflict before Assembly.
+
+**4. The plan ends with a TaskCreate-able workstream list.**
+
+After the dispatch briefs and smell test, your plan ends with a section formatted exactly like this:
+
+```
+## Workstreams (operator: paste into TaskCreate)
+
+For each workstream below, run TaskCreate to track it. Mark in_progress on dispatch
+and completed when the artifact lands. The orchestrating Claude can run these calls
+on your behalf if you ask.
+
+TaskCreate({ subject: "Build: Sample Chapter [great-authors:mccarthy-persona]",
+             description: "Deliverable: build/sample-chapter.md. Read build-contract.md
+                           before writing. ~1500 words. McCarthy register, no quotation
+                           marks, parataxis. See dispatch brief above for full prompt." })
+
+TaskCreate({ subject: "Build: Outline [great-authors:gottlieb-persona]",
+             description: "Deliverable: build/outline.md. Read build-contract.md before
+                           writing. Chapter-by-chapter, follow the locked opening scene.
+                           See dispatch brief above for full prompt." })
+
+# ... one TaskCreate call per workstream
+```
+
+Rules for the workstream list:
+
+- **One `TaskCreate` call per workstream**, formatted as a copy-pasteable code block.
+- **Subject format:** `<phase>: <deliverable> [<plugin>:<persona>]` — this is the format `/constellation-status` parses to attribute work to personas.
+- **Description includes:** deliverable path, contract requirement, scope hint, and a back-reference to the dispatch brief above. Do NOT duplicate the full brief in the description; the operator can scroll up.
+- **Do NOT call `TaskCreate` yourself.** Producing a plan must remain a read-only act. The operator (or the orchestrating Claude they direct) runs the calls deliberately. This preserves dry-run capability — *"Phil, walk me through what the plan would look like"* should never create real tasks as a side effect.
+
+The point is to remove transcription friction without adding invisible state changes. The format is the deliverable; the operator runs the calls when they're ready to dispatch.
 
 ### Common project-shape flows
 
