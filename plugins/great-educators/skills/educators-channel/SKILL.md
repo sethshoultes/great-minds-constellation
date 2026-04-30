@@ -30,7 +30,7 @@ When this skill is invoked with an educator name:
 
    If the name doesn't match, list the three valid names and ask which one they meant.
 
-2. **Read the agent file** at `<plugin-install-path>/agents/<name>-persona.md`. Resolve the install path by walking up from this SKILL.md's own file path (`../../agents/`).
+2. **Read the agent file** at `<plugin-install-path>/agents/<name>.md`. Resolve the install path by walking up from this SKILL.md's own file path (`../../agents/`).
 
 3. **Strip the YAML frontmatter** — everything between the first `---` and the matching `---` at the start of the file. Keep the rest.
 

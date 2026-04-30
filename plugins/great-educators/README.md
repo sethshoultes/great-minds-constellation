@@ -26,7 +26,7 @@ Via the Great Minds constellation marketplace:
 Or standalone (not recommended — the constellation provides cross-plugin routing):
 
 ```
-/plugin add github:sethshoultes/great-educators-plugin
+/plugin add github:sethshoultes/great-minds-constellation/plugins/great-educators
 ```
 
 ## Usage
