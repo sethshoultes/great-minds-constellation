@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "great-educators",
+  "version": "1.0.0",
+  "description": "Three educator personas (Feynman the explainer, Montessori the scaffold designer, Freire the dialogic educator) for instructional content, curriculum sequencing, and learning design. NOT an academic advising tool — a craft register for educational prose.",
+  "author": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "repository": "https://github.com/sethshoultes/great-minds-constellation",
+  "license": "MIT",
+  "keywords": ["education", "pedagogy", "curriculum", "instruction", "personas", "claude-code-plugin"]
+}

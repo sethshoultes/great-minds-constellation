@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "great-minds-constellation",
-  "description": "The full Great Minds constellation: ten plugins covering founder-class personas, authors, filmmakers, designers, engineers, marketers, publishers, counsels, operators, and researchers. ~111 personas, ~71 skills total. Install only the plugins your project needs.",
+  "description": "The full Great Minds constellation: eleven plugins covering founder-class personas, authors, filmmakers, designers, engineers, marketers, publishers, counsels, operators, researchers, and educators. ~111 personas, ~71 skills total. Install only the plugins your project needs.",
   "owner": {
     "name": "Seth Shoultes",
     "url": "https://github.com/sethshoultes"
@@ -65,6 +65,12 @@
       "name": "great-researchers",
       "description": "Nine researcher personas (Sagan, Gould, Roach, Sacks, Gawande, Diamond, Wilson, Skloot, Caro) for studies, peer reviews, and research craft. NOT ACADEMIC ADVICE — a craft register.",
       "source": "./plugins/great-researchers",
+      "category": "productivity"
+    },
+    {
+      "name": "great-educators",
+      "description": "Three educator personas (Feynman the explainer, Montessori the scaffold designer, Freire the dialogic educator) for instructional content, curriculum sequencing, and learning design.",
+      "source": "./plugins/great-educators",
       "category": "productivity"
     }
   ]
