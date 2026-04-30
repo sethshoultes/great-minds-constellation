@@ -1,0 +1,9 @@
+{
+  "name": "great-educators",
+  "version": "1.0.0",
+  "description": "Three educator personas + two skills for instructional content, curriculum sequencing, and learning design. Eleventh in the Great Minds constellation.",
+  "author": "Seth Shoultes <seth@caseproof.com>",
+  "repository": "github:sethshoultes/great-minds-constellation",
+  "license": "MIT",
+  "keywords": ["education", "pedagogy", "curriculum", "instruction", "personas", "claude-code-plugin"]
+}
